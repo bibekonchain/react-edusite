@@ -1,15 +1,67 @@
-.Campus{
-    margin: 80px auto;
+.Campus {
+    margin: 100px auto;
     width: 90%;
+    max-width: 1200px;
     text-align: center;
 }
-.gallery{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 40px;
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-bottom: 50px;
 }
-.gallery img{
-    width: 23%;
-    border-radius: 10px;
+
+.gallery img {
+    width: 100%;
+    height: 100%;
+    border-radius: 14px;
+    cursor: pointer;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Hover effect */
+.gallery img:hover {
+    transform: scale(1.06);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+}
+
+/* Button upgrade */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 28px;
+    font-size: 16px;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dark-btn {
+    background: #111;
+    color: #fff;
+}
+
+.dark-btn img {
+    width: 18px;
+}
+
+.dark-btn:hover {
+    background: #000;
+    transform: translateY(-2px);
+}
+
+/* Responsive design */
+@media (max-width: 992px) {
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 500px) {
+    .gallery {
+        grid-template-columns: 1fr;
+    }
 }
