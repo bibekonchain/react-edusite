@@ -1,14 +1,49 @@
 .title{
-    text-align: center;
-    color: #212EA0;
-    font-size: 15px;
-    font-weight: 600;
-    text-transform: uppercase;
-    margin: 70px 0 30px;
+  text-align: center;
+  margin: 80px auto 40px;
+  padding: 0 16px;
 }
+
+.title p{
+  color: #212EA0;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  position: relative;
+  display: inline-block;
+}
+
+/* subtle underline accent */
+.title p::after{
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -6px;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 3px;
+  background: #212EA0;
+  border-radius: 10px;
+}
+
 .title h2{
-    font-size: 32px;
-    color: #000F38;
-    margin-top: 5px;
-    text-transform: none;
+  font-size: clamp(26px, 4vw, 36px);
+  color: #000F38;
+  margin-top: 16px;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+/* optional soft description spacing */
+@media (max-width: 768px){
+  .title{
+    margin: 60px auto 30px;
+  }
+
+  .title p{
+    font-size: 13px;
+    letter-spacing: 1.5px;
+  }
 }
